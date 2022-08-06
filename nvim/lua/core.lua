@@ -105,13 +105,6 @@ function M.setup()
       end
     })
 
-    -- Onedark Theme
-    --use({
-      --'navarasu/onedark.nvim',
-      --config = function()
-        --require('config.onedark').setup()
-      --end
-    --})
 
     -- Plenary
     use({
