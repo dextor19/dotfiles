@@ -111,6 +111,11 @@ function M.setup()
       'nvim-lua/plenary.nvim'
     })
 
+    -- LazyGit
+    use({
+      'kdheepak/lazygit.vim'
+    })
+
     -- Project
     use({
       'ahmedkhalf/project.nvim',
