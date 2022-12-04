@@ -11,3 +11,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # vim-plug for neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+OS=`uname -s`
+if [ "$OS" == "Darwin"]; then
+ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/zsh/macos/.zshrc ~/.zshrc
+fi
+
