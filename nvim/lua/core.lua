@@ -28,15 +28,6 @@ function M.setup()
       'wbthomason/packer.nvim'
     })
 
-    -- Bufferline
-    use({
-      'akinsho/bufferline.nvim',
-      after = { 'nvim-web-devicons' },
-      config = function()
-        require('config.bufferline').setup()
-      end
-    })
-
     -- Completion
     use({
       'hrsh7th/nvim-cmp',
@@ -64,7 +55,7 @@ function M.setup()
     -- File Tree
     use({
       'kyazdani42/nvim-tree.lua',
-      after = { 'nvim-web-devicons', 'project.nvim' },
+      after = { 'nvim-web-devicons' },
       config = function()
         require('config.nvimtree').setup()
       end
@@ -116,18 +107,10 @@ function M.setup()
       'kdheepak/lazygit.vim'
     })
 
-    -- Project
-    use({
-      'ahmedkhalf/project.nvim',
-      config = function()
-        require('config.project').setup()
-      end
-    })
-
     -- Telescope (Fuzzy Finder)
     use({
       'nvim-telescope/telescope.nvim',
-      after = { 'nvim-treesitter', 'nvim-web-devicons', 'plenary.nvim', 'project.nvim' },
+      after = { 'nvim-treesitter', 'nvim-web-devicons', 'plenary.nvim' },
       config = function()
         require('config.telescope').setup()
       end
@@ -146,14 +129,6 @@ function M.setup()
       'kyazdani42/nvim-web-devicons',
       config = function()
         require('config.webdevicons').setup()
-      end
-    })
-
-    -- WhichKey
-    use({
-      'folke/which-key.nvim',
-      config = function()
-        require('config.whichkey').setup()
       end
     })
 
