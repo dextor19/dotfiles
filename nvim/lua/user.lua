@@ -1,5 +1,5 @@
 local M = {}
-local opts = { noremap = true, slient = true }
+local opts = { noremap = true, silent = true }
 
 function M.setup()
   -- Show line numbers
@@ -43,14 +43,14 @@ function M.setup()
   vim.keymap.set('n', '<A-k>', ':<Esc>:m .-2<CR>==g', opts)
   vim.keymap.set('n', '<TAB>', ':bn<CR>', opts)
   vim.keymap.set('n', '<S-TAB>', ':bp<CR>', opts)
-  -- insert
+
+  -- Insert
   vim.keymap.set('i', '<C-n>', ':NvimTreeToggle<CR>', opts)
   vim.keymap.set('i', '<C-f>', ':NvimTreeFocus<CR>', opts)
+
   -- Visual
   vim.keymap.set('v', '<C-n>', ':NvimTreeToggle<CR>', opts)
   vim.keymap.set('v', '<C-f>', ':NvimTreeFocus<CR>', opts)
-  vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", opts)
-  vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv", opts)
   vim.keymap.set('v', '<', '<gv', opts)
   vim.keymap.set('v', '>', '>gv', opts)
 end
