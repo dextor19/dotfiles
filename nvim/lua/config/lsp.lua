@@ -3,6 +3,7 @@ local M = {}
 function M.setup()
   require("nvim-lsp-installer").setup {}
   local lspconfig = require('lspconfig')
+  local util = require('lspconfig/util')
   -- Provide capabilities
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -48,7 +49,18 @@ function M.setup()
   lspconfig.gopls.setup({
 	  capabilities = capabilities,
 	  on_attach = on_attach,
-	  flags = lsp_flags
+    cmd = {"gopls"},
+    file_types = {"go", "gomod"},
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+	  flags = lsp_flags,
+    settings = {
+      gopls = {
+        usePlaceholders = true,
+        analyses = {
+          unusedparams = true,
+        },
+      }
+    }
   })
   lspconfig.pyright.setup({ capabilities = capabilities })
   lspconfig.tsserver.setup({ capabilities = capabilities })
