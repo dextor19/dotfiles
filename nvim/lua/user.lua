@@ -1,23 +1,25 @@
 local M = {}
 local opts = { noremap = true, silent = true }
+local set = vim.opt
 
 function M.setup()
   -- Show line numbers
-  vim.opt.number = true
-  vim.opt.relativenumber = true
-  vim.opt.expandtab = true
-  vim.opt.tabstop = 2
-  vim.opt.shiftwidth = 2
-  vim.opt.clipboard = "unnamedplus"
+  set.number = true
+  set.relativenumber = true
+  set.expandtab = true
+  set.tabstop = 2
+  set.shiftwidth = 2
+  set.clipboard = "unnamedplus"
+  set.swapfile = false
 
   -- Show some empty characters
-  vim.opt.list = true
+  set.list = true
 
   -- Enable mouse support
-  vim.opt.mouse = 'a'
+  set.mouse = 'a'
 
   -- Set folding
-  vim.opt.foldlevel = 7
+  set.foldlevel = 7
   vim.cmd[[colorscheme tokyonight]]
 
   -- Modes

@@ -53,7 +53,16 @@ function M.setup()
   lspconfig.pyright.setup({ capabilities = capabilities })
   lspconfig.tsserver.setup({ capabilities = capabilities })
   lspconfig.html.setup({ capabilities = capabilities })
-  lspconfig.sumneko_lua.setup({ capabilities = capabilities })
+  lspconfig.sumneko_lua.setup({
+    capabilities = capabilities,
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = {'vim'},
+        }
+      }
+    }
+  })
 end
 
 return M
