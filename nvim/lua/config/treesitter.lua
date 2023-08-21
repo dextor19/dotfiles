@@ -2,11 +2,8 @@ local M = {}
 
 function M.setup()
   require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'c', 'cpp', 'go', 'nix', 'python', 'rust' },
+    ensure_installed = { 'c', 'cpp', 'go', 'nix', 'python', 'rust', 'lua' },
     sync_install = false,
-    highlight = {
-      enable = true
-    }
   })
 
   -- Tree sitter folding

@@ -55,6 +55,7 @@ function M.setup()
 	  flags = lsp_flags,
     settings = {
       gopls = {
+        completeUnimported = true,
         usePlaceholders = true,
         analyses = {
           unusedparams = true,
@@ -65,7 +66,7 @@ function M.setup()
   lspconfig.pyright.setup({ capabilities = capabilities })
   lspconfig.tsserver.setup({ capabilities = capabilities })
   lspconfig.html.setup({ capabilities = capabilities })
-  lspconfig.sumneko_lua.setup({
+  lspconfig.lua_ls.setup({
     capabilities = capabilities,
     settings = {
       Lua = {
