@@ -15,9 +15,6 @@ function M.setup()
   -- Show some empty characters
   set.list = true
 
-  -- Enable mouse support
-  set.mouse = 'a'
-
   -- Set folding
   set.foldlevel = 7
   vim.cmd[[colorscheme tokyonight]]
