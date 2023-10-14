@@ -132,6 +132,7 @@ alias j='jobs -l'
 
 # setup vim as default
 alias vi=nvim
+alias dlv='~/go/bin/dlv'
 alias svi='sudo vi'
 alias vis='nvim "+set si"'
 alias edit='nvim'
