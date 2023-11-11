@@ -17,6 +17,7 @@ function M.setup()
 
   -- Set folding
   set.foldlevel = 7
+  vim.g.mapleader = ","
   vim.cmd[[colorscheme tokyonight]]
 
   -- Modes
