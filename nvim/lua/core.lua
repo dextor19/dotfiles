@@ -111,6 +111,7 @@ function M.setup()
     use({
       'nvim-telescope/telescope.nvim',
       after = { 'nvim-treesitter', 'nvim-web-devicons', 'plenary.nvim' },
+      module = 'telescope',
       config = function()
         require('config.telescope').setup()
       end
