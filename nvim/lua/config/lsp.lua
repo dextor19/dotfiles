@@ -63,6 +63,17 @@ function M.setup()
       }
     }
   })
+  lspconfig.rust_analyzer.setup({
+	  capabilities = capabilities,
+	  on_attach = on_attach,
+    file_types = {"rust"},
+    root_dir = util.root_pattern("Cargo.toml"),
+    settings = {
+      ['rust_analyzer'] = {
+        allFeatures = true,
+      }
+    }
+  })
   lspconfig.pyright.setup({ capabilities = capabilities })
   lspconfig.tsserver.setup({ capabilities = capabilities })
   lspconfig.html.setup({ capabilities = capabilities })
