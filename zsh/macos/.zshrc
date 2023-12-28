@@ -1,5 +1,5 @@
 # load tmux session if not already loaded
-# if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then tmux; fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -145,4 +145,4 @@ alias ping='ping -c 5'
 alias df='df -H'
 alias du='du -ch'
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-eval "$(zellij setup --generate-auto-start zsh)"
+#eval "$(zellij setup --generate-auto-start zsh)"
