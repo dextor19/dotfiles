@@ -1,5 +1,6 @@
--- Load plugins
-require('core').setup()
-
 -- Load user settings
-require('user').setup()
+require('settings')
+
+-- Load plugins
+require('plugins')
+
