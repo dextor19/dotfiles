@@ -77,7 +77,6 @@ require('packer').startup(function(use)
           { name = 'treesitter' }
         }
       })
-      
       -- Auto Pairs
       local cmp_autopairs = require('nvim-autopairs.completion.cmp')
       cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
@@ -128,7 +127,6 @@ require('packer').startup(function(use)
       local on_attach = function(client, bufnr)
         -- Enable completion triggered by <c-x><c-o>
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-      
         -- Mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -152,7 +150,6 @@ require('packer').startup(function(use)
         -- This is the default in Nvim 0.7+
         debounce_text_changes = 150,
       }
-      
       -- Setup Language Servers
       lspconfig.gopls.setup({
               capabilities = capabilities,
@@ -276,17 +273,20 @@ require('packer').startup(function(use)
   -- Telescope (Fuzzy Finder)
   use({
     'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
     after = { 'nvim-treesitter', 'nvim-web-devicons', 'plenary.nvim' },
-    module = 'telescope',
     config = function()
-      require('telescope').setup()
-      local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>sf', function() builtin.find_files(require('telescope.themes').get_dropdown({ no_ignore = true, hidden = true })) end, {})
-      vim.keymap.set('n', '<leader>sg', builtin.live_grep, {})
-      vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
-      vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
-      vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, {})
+        require('telescope').setup()
+        local builtin = require('telescope.builtin')
+        -- Telescope keymaps
+        vim.keymap.set('n', '<leader>sh', builtin.help_tags, {desc = '[S]earch [H]elp'})
+        -- vim.keymap.set('n', '<leader>sf', builtin.find_files, {desc = '[S]earch [F]iles'})
+        vim.keymap.set('n', '<leader>sw', builtin.grep_string, {desc = '[S]earch current [W]ord'})
+        vim.keymap.set('n', '<leader>sg', builtin.live_grep, {desc = '[S]earch by [G]rep'})
+        vim.keymap.set('n', '<leader>sd', builtin.diagnostics, {desc = '[S]earch [D]iagnostics'})
+        vim.keymap.set('n', '<leader>gs', builtin.git_status, {desc = '[G]it [S]tatus'})
+        vim.keymap.set('n', '<leader>gc', builtin.git_commits, {desc = '[G]it [C]ommits'})
+        vim.keymap.set('n', '<leader><leader>', builtin.buffers, {desc = '[ ] Find existing buffers'})
     end
   })
 

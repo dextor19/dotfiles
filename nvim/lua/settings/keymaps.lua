@@ -21,14 +21,7 @@ vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>', opts)
 
 -- Telescope keymaps
-vim.keymap.set('n', '<leader>sh', ':Telescope help_tags<CR>', {desc = '[S]earch [H]elp'})
 vim.keymap.set('n', '<leader>sf', ':Telescope find_files<CR>', {desc = '[S]earch [F]iles'})
-vim.keymap.set('n', '<leader>sw', ':Telescope grep_string<CR>', {desc = '[S]earch current [W]ord'})
-vim.keymap.set('n', '<leader>sg', ':Telescope live_grep<CR>', {desc = '[S]earch by [G]rep'})
-vim.keymap.set('n', '<leader>sd', ':Telescope diagnostics<CR>', {desc = '[S]earch [D]iagnostics'})
-vim.keymap.set('n', '<leader>gs', ':Telescope git_status<CR>', {desc = '[G]it [S]tatus'})
-vim.keymap.set('n', '<leader>gc', ':Telescope git_commits<CR>', {desc = '[G]it [C]ommits'})
-vim.keymap.set('n', '<leader><leader>', ':Telescope buffers<CR>', {desc = '[ ] Find existing buffers'})
 
 -- LazyGit keymaps
 vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', opts)
